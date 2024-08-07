@@ -2,9 +2,10 @@ import streamlit as st
 import os
 from lyzr import ChatBot
 import openai
-
+from dotenv import load_dotenv
+load_dotenv()
 # Set your OpenAI API key
-openai.api_key = st.secrets["apikey"]
+os.getenv("OPENAI_API_KEY")=st.secrets["apikey"]
 
 # Function to initialize the Chatbot with the provided video URL
 def initialize_chatbot(video_url):
